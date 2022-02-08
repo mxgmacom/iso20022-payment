@@ -1,6 +1,6 @@
 # SwissPayment Changelog
 
-## 1.4.0 
+## 1.5.0 
 
   * Fix values for DNB not being processable by bank due to swapped ID values
 
