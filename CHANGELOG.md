@@ -1,5 +1,9 @@
 # SwissPayment Changelog
 
+## 1.4.0 
+
+  * Fix values for DNB not being processable by bank due to swapped ID values
+
 ## 1.0.0
 
   * Set new version for publishing fork on packagist.
