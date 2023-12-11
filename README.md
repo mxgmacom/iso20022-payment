@@ -1,13 +1,12 @@
-# SwissPayment
+# SwissBankPayment
 
-[![Build Status](https://travis-ci.org/z38/swiss-payment.png?branch=master)](https://travis-ci.org/z38/swiss-payment)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/z38/swiss-payment/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/z38/swiss-payment/?branch=master)
+> Beware! This is a library WIP.
 
-**SwissPayment** is a PHP library to generate Swiss pain.001 XML messages (complies with ISO-20022).
+**SwissBankPayment** is a PHP library to generate Swiss pain.001 XML messages (complies with ISO-20022).
 
 ## Installation
 
-Just install [Composer](http://getcomposer.org) and run `composer require z38/swiss-payment` in your project directory.
+Just install [Composer](http://getcomposer.org) and run `composer require mxgma/swiss-bank-payment` in your project directory.
 
 ## Usage
 
@@ -18,16 +17,16 @@ To get a basic understanding on how the messages are structured, take a look [th
 
 require_once __DIR__.'/vendor/autoload.php';
 
-use Z38\SwissPayment\BIC;
-use Z38\SwissPayment\IBAN;
-use Z38\SwissPayment\Message\CustomerCreditTransfer;
-use Z38\SwissPayment\Money;
-use Z38\SwissPayment\PaymentInformation\PaymentInformation;
-use Z38\SwissPayment\PostalAccount;
-use Z38\SwissPayment\StructuredPostalAddress;
-use Z38\SwissPayment\TransactionInformation\BankCreditTransfer;
-use Z38\SwissPayment\TransactionInformation\IS1CreditTransfer;
-use Z38\SwissPayment\UnstructuredPostalAddress;
+use Mxgma\SwissBankPayment\BIC;
+use Mxgma\SwissBankPayment\IBAN;
+use Mxgma\SwissBankPayment\Message\CustomerCreditTransfer;
+use Mxgma\SwissBankPayment\Money;
+use Mxgma\SwissBankPayment\PaymentInformation\PaymentInformation;
+use Mxgma\SwissBankPayment\PostalAccount;
+use Mxgma\SwissBankPayment\StructuredPostalAddress;
+use Mxgma\SwissBankPayment\TransactionInformation\BankCreditTransfer;
+use Mxgma\SwissBankPayment\TransactionInformation\IS1CreditTransfer;
+use Mxgma\SwissBankPayment\UnstructuredPostalAddress;
 
 $transaction1 = new BankCreditTransfer(
     'instr-001',
@@ -63,7 +62,7 @@ $message->addPayment($payment);
 echo $message->asXml();
 ```
 
-**Tip:** Take a look at `Z38\SwissPayment\Tests\Message\CustomerCreditTransferTest` to see all payment types in action.
+**Tip:** Take a look at `Mxgma\SwissBankPayment\Tests\Message\CustomerCreditTransferTest` to see all payment types in action.
 
 ## Caveats
 

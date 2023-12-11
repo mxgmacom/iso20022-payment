@@ -2,14 +2,14 @@
 
 <phpunit colors="true">
     <testsuites>
-        <testsuite name="SwissPayment Test Suite">
-            <directory>tests/Z38/SwissPayment</directory>
+        <testsuite name="SwissBankPayment Test Suite">
+            <directory>tests/Mxgma/SwissBankPayment</directory>
         </testsuite>
     </testsuites>
 
     <filter>
         <whitelist>
-            <directory suffix=".php">src/Z38/SwissPayment</directory>
+            <directory suffix=".php">src/Mxgma/SwissBankPayment</directory>
         </whitelist>
     </filter>
 </phpunit>

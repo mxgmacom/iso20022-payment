@@ -1,15 +1,15 @@
 {
-    "name": "invoicery/iso20022-payment",
+    "name": "mxgma/swiss-bank-payment",
     "version": "2.0.2",
     "type": "library",
     "license": "MIT",
     "description": "PHP library to generate Swiss pain.001 messages (complies with ISO-20022)",
     "keywords": ["banking", "iso-20022", "six", "credit-transfer", "switzerland", "sepa", "xml"],
-    "homepage": "https://github.com/z38/swiss-payment",
+    "homepage": "https://github.com/mxgmacom/swiss-bank-payment",
     "authors": [
         {
-            "name": "z38",
-            "homepage": "https://github.com/z38",
+            "name": "mxgmacom",
+            "homepage": "https://github.com/mxgmacom",
             "role": "Developer"
         }
     ],
@@ -25,12 +25,12 @@
     },
     "autoload": {
         "psr-0": {
-            "Z38\\SwissPayment": "src/"
+            "Mxgma\\SwissBankPayment": "src/"
         }
     },
     "autoload-dev": {
         "psr-0": {
-            "Z38\\SwissPayment\\Tests": "tests/"
+            "Mxgma\\SwissBankPayment\\Tests": "tests/"
         }
     }
 }
