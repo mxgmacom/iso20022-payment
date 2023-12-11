@@ -19,6 +19,8 @@ class ISRCreditTransferTest extends TestCase
      */
     public function testInvalidAmount()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
@@ -34,6 +36,8 @@ class ISRCreditTransferTest extends TestCase
      */
     public function testInvalidCreditorReference()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',
@@ -49,6 +53,8 @@ class ISRCreditTransferTest extends TestCase
      */
     public function testSetRemittanceInformation()
     {
+        $this->expectException(\LogicException::class);
+
         $transfer = new ISRCreditTransfer(
             'id000',
             'name',

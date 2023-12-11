@@ -69,6 +69,8 @@ class SEPAPaymentInformationTest extends TestCase
      */
     public function testAsDomWithNonSEPATransaction()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $payment = new SEPAPaymentInformation(
             'id000',
             'name',

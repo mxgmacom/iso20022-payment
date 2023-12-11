@@ -21,6 +21,8 @@ class BankCreditTransferTest extends TestCase
      */
     public function testInvalidCreditorAgent()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         $creditorAgent = $this->getMock('\Z38\SwissPayment\FinancialInstitutionInterface');
 
         $transfer = new BankCreditTransfer(
@@ -40,6 +42,8 @@ class BankCreditTransferTest extends TestCase
      */
     public function testInvalidAmount()
     {
+        $this->expectException(\TypeError::class);
+
         $transfer = new BankCreditTransfer(
             'id000',
             'name',

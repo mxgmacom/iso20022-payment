@@ -3,6 +3,7 @@
 namespace Z38\SwissPayment\Tests\PaymentInformation;
 
 use DOMDocument;
+use InvalidArgumentException;
 use Z38\SwissPayment\PaymentInformation\CategoryPurposeCode;
 use Z38\SwissPayment\Tests\TestCase;
 
@@ -35,6 +36,8 @@ class CategoryPurposeCodeTest extends TestCase
      */
     public function testInvalid($code)
     {
+        $this->expectException(InvalidArgumentException::class);
+
         new CategoryPurposeCode($code);
     }
 

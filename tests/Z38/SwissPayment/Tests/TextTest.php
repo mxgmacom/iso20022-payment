@@ -3,6 +3,7 @@
 namespace Z38\SwissPayment\Tests;
 
 use DOMDocument;
+use InvalidArgumentException;
 use Z38\SwissPayment\Text;
 
 /**
@@ -15,6 +16,8 @@ class TextTest extends TestCase
      */
     public function testAssertTooLong()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         Text::assert('abcd', 3);
     }
 
@@ -33,6 +36,8 @@ class TextTest extends TestCase
      */
     public function testAssertInvalid()
     {
+        $this->expectException(InvalidArgumentException::class);
+
         Text::assert('°', 10);
     }
 
@@ -41,6 +46,8 @@ class TextTest extends TestCase
      */
     public function testAssertIdentiferBeginsWithSlash()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Text::assertIdentifier('/abc');
     }
 
@@ -49,6 +56,8 @@ class TextTest extends TestCase
      */
     public function testAssertIdentiferContainsDoubleSlash()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Text::assertIdentifier('ab//c');
     }
 
@@ -62,6 +71,8 @@ class TextTest extends TestCase
      */
     public function testAssertCountryCodeUppercase()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         Text::assertCountryCode('ch');
     }
 

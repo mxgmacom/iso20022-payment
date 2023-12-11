@@ -40,6 +40,10 @@ class PostalAccountTest extends TestCase
      */
     public function testInvalidFormat($postalAccount)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->expectExceptionMessage('Postal account number is not properly formatted.');
+
         new PostalAccount($postalAccount);
     }
 
@@ -62,6 +66,8 @@ class PostalAccountTest extends TestCase
      */
     public function testInvalidCheckDigit($postalAccount)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new PostalAccount($postalAccount);
     }
 

@@ -2,6 +2,7 @@
 
 namespace Z38\SwissPayment\Tests\Money;
 
+use InvalidArgumentException;
 use Z38\SwissPayment\Money;
 use Z38\SwissPayment\Tests\TestCase;
 
@@ -92,6 +93,8 @@ class MoneyTest extends TestCase
      */
     public function testInvalidPlus($a, $b)
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $a->plus($b);
     }
 
@@ -102,6 +105,8 @@ class MoneyTest extends TestCase
      */
     public function testInvalidMinus($a, $b)
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $a->minus($b);
     }
 
@@ -112,6 +117,8 @@ class MoneyTest extends TestCase
      */
     public function testInvalidCompareTo($a, $b)
     {
+        $this->expectException(InvalidArgumentException::class);
+
         $a->compareTo($b);
     }
 

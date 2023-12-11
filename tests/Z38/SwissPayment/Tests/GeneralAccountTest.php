@@ -21,7 +21,17 @@ class GeneralAccountTest extends TestCase
      */
     public function testInvalid()
     {
-        $instance = new GeneralAccount('0123456789012345678901234567890123456789');
+        $this->expectException(\InvalidArgumentException::class);
+
+        $exceptionThrown = null;
+
+        try {
+            $instance = new GeneralAccount('0123456789012345678901234567890123456789');
+        } catch (\Exception $exception) {
+            $exceptionThrown = $exception;
+        }
+
+        $this->assertTrue($exceptionThrown instanceof InvalidArgumentException);
     }
 
     /**

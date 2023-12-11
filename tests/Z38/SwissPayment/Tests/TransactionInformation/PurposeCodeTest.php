@@ -37,6 +37,8 @@ class PurposeCodeTest extends TestCase
      */
     public function testInvalid($code)
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new PurposeCode($code);
     }
 

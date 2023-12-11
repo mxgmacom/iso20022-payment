@@ -2,6 +2,7 @@
 
 namespace Z38\SwissPayment\Tests;
 
+use InvalidArgumentException;
 use Z38\SwissPayment\ISRParticipant;
 
 /**
@@ -25,6 +26,8 @@ class ISRParticipantTest extends TestCase
      */
     public function testInvalid($number)
     {
+        $this->expectException(InvalidArgumentException::class);
+
         new ISRParticipant($number);
     }
 
