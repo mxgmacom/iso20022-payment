@@ -83,7 +83,7 @@ class ISRCreditTransfer extends CreditTransfer
     {
         $root = $this->buildHeader($doc, $paymentInformation);
 
-        if (strlen($this->creditorName) && isset($this->creditorAddress)) {
+        if (strlen($this->creditorName ?? '') && isset($this->creditorAddress)) {
             $root->appendChild($this->buildCreditor($doc));
         }
 
