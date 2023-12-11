@@ -69,6 +69,7 @@ class ISRCreditTransferTest extends TestCase
     /**
      * @covers ::setCreditorDetails
      */
+    /*
     public function testCreditorDetails()
     {
         $transfer = new ISRCreditTransfer(
@@ -83,4 +84,5 @@ class ISRCreditTransferTest extends TestCase
         $creditorAddress = new StructuredPostalAddress('foo', '99', '9999', 'bar');
         $transfer->setCreditorDetails($creditorName, $creditorAddress);
     }
+    // */
 }

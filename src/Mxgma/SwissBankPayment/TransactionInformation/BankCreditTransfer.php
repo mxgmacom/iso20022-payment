@@ -22,10 +22,9 @@ class BankCreditTransfer extends CreditTransfer
      */
     protected $creditorIBAN;
 
-    /**
-     * @var FinancialInstitutionInterface
-     */
-    protected $creditorAgent;
+    protected AccountInterface $creditorAccount;
+
+    protected FinancialInstitutionInterface $creditorAgent;
 
     /**
      * {@inheritdoc}

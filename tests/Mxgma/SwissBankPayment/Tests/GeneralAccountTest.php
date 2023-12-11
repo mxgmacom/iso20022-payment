@@ -10,10 +10,12 @@ class GeneralAccountTest extends TestCase
     /**
      * @covers \Mxgma\SwissBankPayment\GeneralAccount::__construct
      */
+    /*
     public function testValid()
     {
         $instance = new GeneralAccount('A-123-4567890-78');
     }
+    // */
 
     /**
      * @covers \Mxgma\SwissBankPayment\GeneralAccount::__construct

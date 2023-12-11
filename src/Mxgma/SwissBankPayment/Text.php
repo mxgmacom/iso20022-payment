@@ -107,7 +107,7 @@ class Text
     public static function xml(DOMDocument $doc, $tag, $content)
     {
         $element = $doc->createElement($tag);
-        $element->appendChild($doc->createTextNode($content));
+        $element->appendChild($doc->createTextNode($content ?? ''));
 
         return $element;
     }

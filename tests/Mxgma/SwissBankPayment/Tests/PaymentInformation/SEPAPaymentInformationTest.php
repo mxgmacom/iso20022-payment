@@ -4,11 +4,15 @@ namespace Mxgma\SwissBankPayment\Tests\PaymentInformation;
 
 use Mxgma\SwissBankPayment\BIC;
 use Mxgma\SwissBankPayment\IBAN;
+use Mxgma\SwissBankPayment\Message\CustomerCreditTransfer;
 use Mxgma\SwissBankPayment\Money;
+use Mxgma\SwissBankPayment\PaymentInformation\PaymentInformation;
 use Mxgma\SwissBankPayment\PaymentInformation\SEPAPaymentInformation;
+use Mxgma\SwissBankPayment\PostalAccount;
 use Mxgma\SwissBankPayment\StructuredPostalAddress;
 use Mxgma\SwissBankPayment\Tests\TestCase;
 use Mxgma\SwissBankPayment\TransactionInformation\BankCreditTransfer;
+use Mxgma\SwissBankPayment\TransactionInformation\IS1CreditTransfer;
 use Mxgma\SwissBankPayment\TransactionInformation\SEPACreditTransfer;
 use Mxgma\SwissBankPayment\UnstructuredPostalAddress;
 
@@ -43,6 +47,7 @@ class SEPAPaymentInformationTest extends TestCase
             new BIC('POFICHBEXXX'),
             new IBAN('CH31 8123 9000 0012 4568 9')
         );
+
         $payment->addTransaction(new SEPACreditTransfer(
             'instr-001',
             'e2e-001',
@@ -58,7 +63,11 @@ class SEPAPaymentInformationTest extends TestCase
         $doc->appendChild($dom);
 
         $xpath = new \DOMXPath($doc);
-        $this->assertEquals('SEPA', $xpath->evaluate('string(/PmtInf/PmtTpInf/SvcLvl/Cd)'));
+
+        $this->assertEquals(
+            expected: 'SEPA',
+            actual: $xpath->evaluate('string(/PmtInf/PmtTpInf/SvcLvl/Cd)')
+        );
         $this->assertEquals(0, $xpath->evaluate('count(//CdtTrfTxInf/PmtTpInf)'));
     }
 

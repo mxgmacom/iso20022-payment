@@ -18,7 +18,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^9.0",
-        "ext-dom": "*"
+        "ext-dom": "*",
+        "ext-libxml": "*"
     },
     "scripts": {
         "test": "./vendor/bin/phpunit --verbose tests"

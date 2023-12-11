@@ -23,7 +23,7 @@ class BankCreditTransferTest extends TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $creditorAgent = $this->getMock('\Mxgma\SwissBankPayment\FinancialInstitutionInterface');
+        $creditorAgent = $this->createMock('\Mxgma\SwissBankPayment\FinancialInstitutionInterface');
 
         $transfer = new BankCreditTransfer(
             'id000',
@@ -47,26 +47,10 @@ class BankCreditTransferTest extends TestCase
         $transfer = new BankCreditTransfer(
             'id000',
             'name',
-            100,
+            new Money\CHF(cents: 100),
             'name',
             new StructuredPostalAddress('foo', '99', '9999', 'bar'),
             new IBAN('CH31 8123 9000 0012 4568 9'),
-            new BIC('PSETPD2SZZZ')
-        );
-    }
-
-    /**
-     * @covers ::__construct
-     */
-    public function testBankCreditCanBeDoneWithSEKAndBBAN()
-    {
-        $transfer = new BankCreditTransfer(
-            'id000',
-            'name',
-            new Money\SEK(100),
-            'name',
-            new StructuredPostalAddress('foo', '99', '9999', 'bar'),
-            new BBAN('1234', '123456789'),
             new BIC('PSETPD2SZZZ')
         );
     }

@@ -2,6 +2,7 @@
 
 namespace Mxgma\SwissBankPayment\Tests\TransactionInformation;
 
+use Mxgma\SwissBankPayment\FinancialInstitutionAddress;
 use Mxgma\SwissBankPayment\IBAN;
 use Mxgma\SwissBankPayment\Money;
 use Mxgma\SwissBankPayment\StructuredPostalAddress;
@@ -19,7 +20,9 @@ class ForeignCreditTransferTest extends TestCase
      */
     public function testInvalidCreditorAgent()
     {
-        $creditorAgent = $this->getMock('\Mxgma\SwissBankPayment\FinancialInstitutionInterface');
+        $this->expectException(\InvalidArgumentException::class);
+
+        $creditorAgent = $this->createMock(FinancialInstitutionAddress::class);
 
         $transfer = new ForeignCreditTransfer(
             'id000',
