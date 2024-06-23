@@ -27,8 +27,8 @@ use Mxgma\SwissBankPayment\UnstructuredPostalAddress;
 
 class CustomerCreditTransferTest extends TestCase
 {
-    const SCHEMA = 'urn:iso:std:iso:20022:tech:xsd:pain.001.001.03';
-    const SCHEMA_PATH = 'pain.001.001.03.xsd';
+    const SCHEMA = 'urn:iso:std:iso:20022:tech:xsd:pain.001.001.09';
+    const SCHEMA_PATH = 'pain.001.001.09.xsd';
 
     protected function buildMessage()
     {
@@ -231,7 +231,7 @@ class CustomerCreditTransferTest extends TestCase
     public function testSchemaValidation()
     {
         $xml = $this->buildMessage()->asXml();
-        $schemaPath = __DIR__.'/../../../../'.self::SCHEMA_PATH;
+        $schemaPath = __DIR__ . '/../../../../' . self::SCHEMA_PATH;
 
         $doc = new \DOMDocument();
         $doc->loadXML($xml);
